@@ -26,7 +26,7 @@ angular.module('ticTacToeApp')
     $scope.move = function(pos) {
     	if(TicTacToeGame.fillAt(pos) === '') {
     	moveAt('X', pos);
-      console.log(AI.findMove(TicTacToeGame.gimmeBoard()));
+      console.log(TicTacToeGame.gimmeBoard());
     	moveAt('O', AI.findMove(TicTacToeGame.gimmeBoard()));
     	}
     };
