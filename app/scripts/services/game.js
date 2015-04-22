@@ -15,6 +15,8 @@ angular.module('ticTacToeApp').factory('BaseCase', function() {
 			for(var i=0; i < b.length; i++) {
 				if(b[i] === '') {
 					return false;
+				}else if(!b) {
+					console.log('no board');
 				}
 			}
 			return true;
