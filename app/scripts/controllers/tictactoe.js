@@ -15,7 +15,7 @@ angular.module('ticTacToeApp')
   			$scope.winner = player;
   		}else if(TicTacToeGame.checkTie(TicTacToeGame.gimmeBoard())) {
         $scope.winner = 'No one';
-        $scope.tie = 'It is a tie game.';
+        $scope.tie = ' It is a tie game.';
       }
   	};
 
