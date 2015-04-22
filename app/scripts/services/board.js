@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('ticTacToeApp').factory('TicTacToeGame', function(){
-	var minPlayer = 'X';
-	var maxPlayer = 'O';
+	// var minPlayer = 'X';
+	// var maxPlayer = 'O';
 
 	var newBoard = function() {
 	return [
@@ -46,7 +46,7 @@ angular.module('ticTacToeApp').factory('TicTacToeGame', function(){
 			return false;
 		},
 
-		checkTie: function() {
+		checkTie: function(board) {
 
 			for(var i=0; i < board.length; i++) {
 				if(board[i] === '') {
@@ -59,70 +59,70 @@ angular.module('ticTacToeApp').factory('TicTacToeGame', function(){
 		gimmeBoard: function() {
 			console.log(board);
 			return board;
-		},
-
-		cloneBoard: function(board) {
-			return board.slice(0);
-		},
-
-		makeMove: function(move, player, board) {
-			var newBoard = this.cloneBoard(board);
-			// console.log(newBoard);
-			if(newBoard[move] === '') {
-				newBoard[move] = player;
-				return newBoard;
-			}else {
-				return null;
-			}
-		},
-
-		minValue: function(board) {
-			if(this.gameWon(maxPlayer)) {
-				return 1;
-			}else if(this.gameWon(minPlayer)) {
-				return -1;
-			}else if(this.checkTie()) {
-				return 0;
-			}else {
-				var bestMove = 100;
-				var move = 0;
-				for(var i=0; i < board.length; i++) {
-					var newBoard = this.makeMove(i, minPlayer, board);
-					if(newBoard) {
-						var predictedMove = this.maxValue(newBoard);
-						if(predictedMove < bestMove) {
-							bestMove = predictedMove;
-							move = i;
-						}
-					}
-				}
-				return bestMove;
-			}
-		},
-
-		maxValue: function(board) {
-			if(this.gameWon(maxPlayer)) {
-				return 1;
-			}else if(this.gameWon(minPlayer)) {
-				return -1;
-			}else if(this.checkTie()) {
-				return 0;
-			}else {
-				var bestMove = -100;
-				var move = 0;
-				for(var i=0; i < board.length; i++) {
-					var newBoard = this.makeMove(i, maxPlayer, board);
-					if(newBoard) {
-						var predictedMove = this.minValue(newBoard);
-						if(predictedMove > bestMove) {
-							bestMove = predictedMove;
-							move = i;
-						}
-					}
-				}
-				return bestMove;
-			}
 		}
+
+		// cloneBoard: function(board) {
+		// 	return board.slice(0);
+		// },
+
+		// makeMove: function(move, player, board) {
+		// 	var newBoard = this.cloneBoard(board);
+		// 	// console.log(newBoard);
+		// 	if(newBoard[move] === '') {
+		// 		newBoard[move] = player;
+		// 		return newBoard;
+		// 	}else {
+		// 		return null;
+		// 	}
+		// },
+
+		// minValue: function(board) {
+		// 	if(this.gameWon(maxPlayer)) {
+		// 		return 1;
+		// 	}else if(this.gameWon(minPlayer)) {
+		// 		return -1;
+		// 	}else if(this.checkTie()) {
+		// 		return 0;
+		// 	}else {
+		// 		var bestMove = 100;
+		// 		var move = 0;
+		// 		for(var i=0; i < board.length; i++) {
+		// 			var newBoard = this.makeMove(i, minPlayer, board);
+		// 			if(newBoard) {
+		// 				var predictedMove = this.maxValue(newBoard);
+		// 				if(predictedMove < bestMove) {
+		// 					bestMove = predictedMove;
+		// 					move = i;
+		// 				}
+		// 			}
+		// 		}
+		// 		return bestMove;
+		// 	}
+		// },
+
+		// maxValue: function(board) {
+		// 	if(this.gameWon(maxPlayer)) {
+		// 		return 1;
+		// 	}else if(this.gameWon(minPlayer)) {
+		// 		return -1;
+		// 	}else if(this.checkTie()) {
+		// 		return 0;
+		// 	}else {
+		// 		var bestMove = -100;
+		// 		var move = 0;
+		// 		for(var i=0; i < board.length; i++) {
+		// 			var newBoard = this.makeMove(i, maxPlayer, board);
+		// 			if(newBoard) {
+		// 				var predictedMove = this.minValue(newBoard);
+		// 				if(predictedMove > bestMove) {
+		// 					bestMove = predictedMove;
+		// 					move = i;
+		// 				}
+		// 			}
+		// 		}
+		// 		return bestMove;
+		// 	}
+		// }
 
 
 
