@@ -14,9 +14,10 @@ angular.module('ticTacToeApp')
   		if(TicTacToeGame.gameWon(player)) {
   			$scope.winner = player;
   		}else if(TicTacToeGame.checkTie(TicTacToeGame.gimmeBoard())) {
-        $scope.winner = 'No one';
-        $scope.tie = ' It is a tie game.';
+
+        $scope.tie = 'It is a tie game.';
       }
+
   	};
 
   	var moveAt = function(player, pos) {
@@ -37,6 +38,7 @@ angular.module('ticTacToeApp')
     $scope.newGame = function() {
     	TicTacToeGame.newGame();
     	$scope.winner = null;
+      $scope.tie = null;
     };
 
     $scope.fillAt = function(pos) {
