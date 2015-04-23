@@ -1,9 +1,5 @@
 <div class="game-board">
-  <h1>Tic Tac Toe</h1>
-  <div>
-    <button ng-click="newGame()">New Game</button>
-    <span ng-show="winner">{{winner}} wins!!{{tie}}</span>
-  </div>
+
   <table id="board">
     <tr>
       <td class="top left" ng-click="move(0)">{{fillAt(0)}}</td>
@@ -21,4 +17,9 @@
       <td class="bottom right" ng-click="move(8)">{{fillAt(8)}}</td>
     </tr>
   </table>
+   <div>
+      <button  class="btn btn-block stack" ng-click="newGame()">New Game</button>
+      <h3 class="text-center" ng-show="winner">{{winner}} wins!!{{tie}}</h3>
+  </div>
+
 </div>

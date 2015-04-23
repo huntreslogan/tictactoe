@@ -5,7 +5,7 @@ body {
 
 .game-board {
     margin: 0px auto 0 auto;
-    width: 400px;
+    width: 700px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
@@ -15,20 +15,22 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 56px;
 }
 
 table {
     border: 1;
     table-layout: fixed;
-    margin: 10px auto 0 auto;
+    margin: 20px auto 0 auto;
+    background-color: #fff;
 }
 
 #board td {
-    height: 50px;
-    width: 50px;
+    height: 150px;
+    width: 150px;
     text-align: center;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 56px;
     line-height: 0px;
 }
 
@@ -52,3 +54,19 @@ table {
 .bottom {
     border-top-style: solid;
 }
+
+.stack {
+    display: block;
+     margin: 15px auto 0 auto;
+     width: 50%;
+}
+
+button.stack {
+    font-size: 20px;
+}
+
+header {
+    background-color: #fff;
+    width: 100%;
+}
+
