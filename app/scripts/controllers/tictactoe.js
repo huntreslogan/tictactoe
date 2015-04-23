@@ -14,7 +14,7 @@ angular.module('ticTacToeApp')
   	var checkWinner = function(player) {
   		if(TicTacToeGame.gameWon(player)) {
   			$scope.winner = player;
-  		}else if(TicTacToeGame.checkTie(TicTacToeGame.gimmeBoard())) {
+  		}else if(TicTacToeGame.checkTie(TicTacToeGame.gimmeBoard()) && (!$scope.winner)) {
         $scope.tie = 'It is a tie game.';
       }
 
