@@ -1,5 +1,12 @@
 'use strict';
 
+
+//service that tests to see if the game is over
+//the first method sees if a given player has won based on the state of a given board
+//the second method tests to see if all spaces have been taken
+//the recursive minimax functions use these methods to test if a basecase has been met and if so will break out of the loop
+
+
 angular.module('ticTacToeApp').factory('BaseCase', function() {
 	return {
 		checkWinner: function(player, board) {
@@ -15,8 +22,6 @@ angular.module('ticTacToeApp').factory('BaseCase', function() {
 			for(var i=0; i < b.length; i++) {
 				if(b[i] === '') {
 					return false;
-				}else if(!b) {
-					console.log('no board');
 				}
 			}
 			return true;

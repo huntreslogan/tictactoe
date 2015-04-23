@@ -1,6 +1,7 @@
 body {
-    background-color: #eee;
+    background-color: #d4edf4;
     margin: 0;
+    font-family: 'Chelsea Market';
 }
 
 .game-board {
@@ -15,8 +16,9 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 6em;
     text-transform: uppercase;
+    font-family: 'Londrina Shadow';
 }
 
 table {
@@ -24,6 +26,7 @@ table {
     table-layout: fixed;
     margin: 20px auto 0 auto;
     background-color: #fff;
+
 }
 
 #board td {
@@ -33,26 +36,33 @@ table {
     font-weight: bold;
     font-size: 56px;
     line-height: 0px;
+    color: #1352a2;
 }
 
 .left {
-    border-right-style: solid;
+    border-color: #1352a2;
+    border-right-style: solid ;
 }
 .middle {
-    border-left-style: solid;
-    border-right-style: solid;
+    border-color: #1352a2;
+    border-left-style: solid ;
+    border-right-style: solid ;
 }
 .right {
+    border-color: #1352a2;
     border-left-style: solid;
 }
 .top {
+    border-color: #1352a2;
     border-bottom-style: solid;
 }
 .center {
-    border-top-style: solid;
-    border-bottom-style: solid;
+    border-color: #1352a2;
+    border-top-style: solid ;
+    border-bottom-style: solid ;
 }
 .bottom {
+    border-color: #1352a2;
     border-top-style: solid;
 }
 
@@ -60,14 +70,29 @@ table {
     display: block;
      margin: 15px auto 0 auto;
      width: 50%;
+    color: #1352a2;
 }
 
 button.stack {
     font-size: 26px;
+    background-color: #52a7e7;
+    color: #fff;
 }
 
 header {
-    background-color: #fff;
+    background-color: #ff555a;
     width: 100%;
+    color: #fff;
 }
 
+button.stack:hover {
+    color: #1352a2;
+}
+
+button.stack:focus {
+    color: #1352a2;
+}
+
+#board td:hover {
+    background-color: #89c4f4;
+}
