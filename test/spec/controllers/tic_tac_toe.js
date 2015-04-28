@@ -22,35 +22,35 @@ describe('Controller: TicTacToeCtrl', function() {
 	}));
 
 	it('makes my move and sets up new game', function() {
-		testAI.makeMove.returns(3);
-		scope.move(4);
-		scope.fillAt(4).should.eql('X');
-		scope.fillAt(3).should.eql('O');
+		testAI.makeMove.returns(2);
+		scope.move(3);
+		scope.fillAt(3).should.eql('X');
+		scope.fillAt(2).should.eql('O');
 		scope.newGame();
-		scope.fillAt(4).should.eql('');
 		scope.fillAt(3).should.eql('');
+		scope.fillAt(2).should.eql('');
 	});
 
 	if('cannot fill used position', function() {
-		testAI.makeMove.returns(3);
-		scope.move(4);
+		testAI.makeMove.returns(2);
 		scope.move(3);
-		scope.fillAt(4).should.eql('X');
-		scope.fillAt(3).should.eql('O');
+		scope.move(2);
+		scope.fillAt(3).should.eql('X');
+		scope.fillAt(2).should.eql('O');
 	});
 
 	it('can tell when I have won', function() {
-		testAI.makeMove.returns(4);
+		testAI.makeMove.returns(3);
+		scope.move(0);
 		scope.move(1);
 		scope.move(2);
-		scope.move(3);
 		scope.winner.should.eql('X');
 	});
 
 	if('will not let us play once game is over', function() {
 		scope.winner = 'X';
-		scope.move(5);
-		scope.fillAt(5).should.eql('');
+		scope.move(4);
+		scope.fillAt(2).should.eql('');
 	});
 });
 
