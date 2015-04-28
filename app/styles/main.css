@@ -1,7 +1,7 @@
 body {
     background-color: #d4edf4;
     margin: 0;
-    font-family: 'Chelsea Market';
+    font-family: 'Chelsea Market', Helvetica;
 }
 
 .game-board {
@@ -18,7 +18,7 @@ h1 {
     text-align: center;
     font-size: 6em;
     text-transform: uppercase;
-    font-family: 'Londrina Shadow';
+    font-family: 'Londrina Shadow', Helvetica;
 }
 
 table {
