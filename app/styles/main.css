@@ -97,4 +97,6 @@ button.stack:focus {
     background-color: #89c4f4;
 }
 
-
+.go-time {
+    border: 10px solid #02d0ac;
+}

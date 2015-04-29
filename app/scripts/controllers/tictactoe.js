@@ -20,10 +20,11 @@ angular.module('ticTacToeApp')
       var currentBoard = returnBoard();
   		if(BaseCase.checkWinner(player, currentBoard)) {
   			$scope.winner = player;
-        $scope.tie = null;
         $scope.isDisabled = true;
+        $scope.letsPlay = 'go-time';
   		}else if(BaseCase.checkTie(currentBoard) && (!$scope.winner)) {
         $scope.tie = 'It is a tie game.';
+        $scope.letsPlay = 'go-time';
       }
 
   	};
@@ -53,6 +54,7 @@ angular.module('ticTacToeApp')
     	TicTacToeGame.newGame();
     	$scope.winner = null;
       $scope.tie = null;
+      $scope.letsPlay = '';
     };
 
     //returns contents of position in board
