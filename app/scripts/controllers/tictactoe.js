@@ -10,12 +10,18 @@
 angular.module('ticTacToeApp')
   .controller('TicTacToeCtrl', function ($scope, TicTacToeGame, AI, BaseCase) {
 
+    var returnBoard = function() {
+      return TicTacToeGame.gimmeBoard();
+    };
+
+
     //checks to see if either player has won or if tie game and displays appropriate message
   	var checkWinner = function(player) {
-      var currentBoard = TicTacToeGame.gimmeBoard();
+      var currentBoard = returnBoard();
   		if(BaseCase.checkWinner(player, currentBoard)) {
   			$scope.winner = player;
         $scope.tie = null;
+        $scope.isDisabled = true;
   		}else if(BaseCase.checkTie(currentBoard) && (!$scope.winner)) {
         $scope.tie = 'It is a tie game.';
       }
@@ -25,8 +31,9 @@ angular.module('ticTacToeApp')
     //checks to see if game has a winner and if not places player symbol in table position
     //checks for winner after symbol is placed in board
   	var moveAt = function(player, pos) {
+      var currentBoard = returnBoard();
   		if(!$scope.winner) {
-  			TicTacToeGame.moveAt(player, pos);
+        currentBoard[pos] = player;
   			checkWinner(player);
   		}
   	};
@@ -34,10 +41,9 @@ angular.module('ticTacToeApp')
     //checks to see if position on board is empty and if not places player move in position
     //AI then makes move in best possible position to minimize players maximum gain
     $scope.move = function(pos) {
-      var currentBoard = TicTacToeGame.gimmeBoard();
     	if(TicTacToeGame.fillAt(pos) === '') {
     	moveAt('X', pos);
-    	moveAt('O', AI.findMove(currentBoard));
+    	moveAt('O', AI.findMove(returnBoard()));
     	}
     };
 

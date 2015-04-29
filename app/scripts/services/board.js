@@ -17,17 +17,11 @@ angular.module('ticTacToeApp').factory('TicTacToeGame', function(){
 
 	var board = newBoard();
 
-	//returns the contents of a given board position
-	var fillAt = function(pos) {
-		return board[pos];
-	};
-
 	return {
-		fillAt: fillAt,
 
-		//places player symbol in given position on board
-		moveAt: function(player, pos) {
-			board[pos] = player;
+		//returns the contents of a given board position
+		fillAt: function(pos) {
+			return board[pos];
 		},
 
 		newGame: function() {
