@@ -18,9 +18,9 @@ angular.module('ticTacToeApp').factory('BaseCase', function() {
 			}
 		},
 
-		checkTie: function(b) {
-			for(var i=0; i < b.length; i++) {
-				if(b[i] === '') {
+		checkTie: function(board) {
+			for(var i=0; i < board.length; i++) {
+				if(board[i] === '') {
 					return false;
 				}
 			}
