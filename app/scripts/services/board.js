@@ -4,7 +4,7 @@
 //service that creates the game board and handles the UI for the game
 
 
-angular.module('ticTacToeApp').factory('TicTacToeGame', function(){
+angular.module('ticTacToeApp').factory('Board', function(){
 
 	//creates empty board
 	var newBoard = function() {

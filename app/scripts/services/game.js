@@ -7,7 +7,7 @@
 //the recursive minimax functions use these methods to test if a basecase has been met and if so will break out of the loop
 
 
-angular.module('ticTacToeApp').factory('BaseCase', function() {
+angular.module('ticTacToeApp').factory('GameOver', function() {
 	return {
 		checkWinner: function(player, board) {
 			if((board[0] === player && board[1] === player && board[2] === player) || (board[3] === player && board[4] === player && board[5] === player) || (board[6] === player && board[7] === player && board[8] === player) || (board[0] === player && board[3] === player && board[6] === player) || (board[1] === player && board[4] === player && board[7] === player) || (board[2] === player && board[5] === player && board[8] === player) || (board[0] === player && board[4] === player && board[8] === player) || (board[2] === player && board[4] === player && board[6] === player)

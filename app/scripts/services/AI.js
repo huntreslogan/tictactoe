@@ -6,7 +6,7 @@
 //uses minimax algorithm to compute all possible moves and selects the best move to minimize the upper bound of the human player's score for that move
 
 
-angular.module('ticTacToeApp').factory('AI', function(TicTacToeGame, BaseCase) {
+angular.module('ticTacToeApp').factory('AI', function(GameOver) {
 	//minplayer is the human and maxplayer is the AI
 	//makes sure that the minimax gives the best move for the AI and not the human player
 	var minPlayer = 'X';
@@ -35,11 +35,11 @@ angular.module('ticTacToeApp').factory('AI', function(TicTacToeGame, BaseCase) {
 		//first checks to see if there is a winner or tie and if so will return a score based on the result of the game
 		//simulates the moves of the human player and will select the option that will minimize the score for the AI player
 		minValue: function(board) {
-			if(BaseCase.checkWinner(maxPlayer, board)) {
+			if(GameOver.checkWinner(maxPlayer, board)) {
 				return 1;
-			}else if(BaseCase.checkWinner(minPlayer, board)) {
+			}else if(GameOver.checkWinner(minPlayer, board)) {
 				return -1;
-			}else if(BaseCase.checkTie(board)) {
+			}else if(GameOver.checkTie(board)) {
 				return 0;
 			}else {
 				var bestMove = 100;
@@ -61,11 +61,11 @@ angular.module('ticTacToeApp').factory('AI', function(TicTacToeGame, BaseCase) {
 		//again will test for a winner or tie game and break from the loop if those base cases are reached
 		//if not will simulate moves for the AI player and will select the option that maximizes the score for that player
 		maxValue: function(board) {
-			if(BaseCase.checkWinner(maxPlayer, board)) {
+			if(GameOver.checkWinner(maxPlayer, board)) {
 				return 1;
-			}else if(BaseCase.checkWinner(minPlayer, board)) {
+			}else if(GameOver.checkWinner(minPlayer, board)) {
 				return -1;
-			}else if(BaseCase.checkTie(board)) {
+			}else if(GameOver.checkTie(board)) {
 				return 0;
 			}else {
 				var bestMove = -100;
@@ -100,7 +100,6 @@ angular.module('ticTacToeApp').factory('AI', function(TicTacToeGame, BaseCase) {
 					}
 				}
 			}
-			console.log(move);
 			return move;
 		}
 	};

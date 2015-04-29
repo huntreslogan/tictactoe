@@ -13,8 +13,11 @@ body {
     border-radius: 6px;
     padding: 10px;
 }
-
+h3 {
+    margin-top: 10px;
+}
 h1 {
+    margin-top: 10px;
     text-align: center;
     font-size: 6em;
     text-transform: uppercase;
@@ -24,7 +27,7 @@ h1 {
 table {
     border: 1;
     table-layout: fixed;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
     background-color: #fff;
 
 }
@@ -98,5 +101,5 @@ button.stack:focus {
 }
 
 .go-time {
-    border: 10px solid #02d0ac;
+    border: 10px solid #ff555a;
 }
